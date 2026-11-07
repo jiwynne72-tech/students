@@ -265,7 +265,66 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     <div class="lg:col-span-7 space-y-3">
                         <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 text-xs text-slate-300">
-                            <strong>Prompt:</strong> The chart shows global freight volume across three transport sectors (Maritime, Aviation, Rail) from 2015 to 2025. Summarize the information by selecting and reporting the main features, and make comparisons where relevant.
+                            <strong>Prompt:</strong> The chart below shows global freight volume across three transport sectors (Maritime, Aviation, Rail) from 2015 to 2025 measured in million metric tons. Summarize the information by selecting and reporting the main features, and make comparisons where relevant.
+                        </div>
+
+                        <!-- Interactive SVG Line Chart -->
+                        <div class="bg-slate-950 p-4 rounded-lg border border-slate-800">
+                            <div class="flex items-center justify-between mb-3 text-xs">
+                                <span class="font-bold text-slate-300">Freight Volume (Million Metric Tons)</span>
+                                <div class="flex gap-3 text-[11px]">
+                                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400 inline-block"></span> Maritime</span>
+                                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-purple-400 inline-block"></span> Aviation</span>
+                                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span> Rail</span>
+                                </div>
+                            </div>
+                            <div class="relative w-full h-52">
+                                <svg viewBox="0 0 500 200" class="w-full h-full overflow-visible">
+                                    <!-- Grid lines -->
+                                    <line x1="40" y1="20" x2="480" y2="20" stroke="#1e293b" stroke-dasharray="3 3"/>
+                                    <text x="30" y="24" fill="#64748b" font-size="9" text-anchor="end">100M</text>
+
+                                    <line x1="40" y1="65" x2="480" y2="65" stroke="#1e293b" stroke-dasharray="3 3"/>
+                                    <text x="30" y="69" fill="#64748b" font-size="9" text-anchor="end">75M</text>
+
+                                    <line x1="40" y1="110" x2="480" y2="110" stroke="#1e293b" stroke-dasharray="3 3"/>
+                                    <text x="30" y="114" fill="#64748b" font-size="9" text-anchor="end">50M</text>
+
+                                    <line x1="40" y1="155" x2="480" y2="155" stroke="#1e293b" stroke-dasharray="3 3"/>
+                                    <text x="30" y="159" fill="#64748b" font-size="9" text-anchor="end">25M</text>
+
+                                    <!-- X-Axis Labels -->
+                                    <text x="40" y="180" fill="#94a3b8" font-size="9" text-anchor="middle">2015</text>
+                                    <text x="150" y="180" fill="#94a3b8" font-size="9" text-anchor="middle">2018</text>
+                                    <text x="260" y="180" fill="#94a3b8" font-size="9" text-anchor="middle">2021</text>
+                                    <text x="370" y="180" fill="#94a3b8" font-size="9" text-anchor="middle">2023</text>
+                                    <text x="480" y="180" fill="#94a3b8" font-size="9" text-anchor="middle">2025</text>
+
+                                    <!-- Maritime Line (Cyan: 70M -> 95M) -->
+                                    <polyline fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" points="40,74 150,65 260,47 370,35 480,29" />
+                                    <circle cx="40" cy="74" r="3.5" fill="#06b6d4"/>
+                                    <circle cx="150" cy="65" r="3.5" fill="#06b6d4"/>
+                                    <circle cx="260" cy="47" r="3.5" fill="#06b6d4"/>
+                                    <circle cx="370" cy="35" r="3.5" fill="#06b6d4"/>
+                                    <circle cx="480" cy="29" r="3.5" fill="#06b6d4"/>
+
+                                    <!-- Aviation Line (Purple: 20M -> 72M) -->
+                                    <polyline fill="none" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" points="40,164 150,146 260,110 370,80 480,70" />
+                                    <circle cx="40" cy="164" r="3.5" fill="#a855f7"/>
+                                    <circle cx="150" cy="146" r="3.5" fill="#a855f7"/>
+                                    <circle cx="260" cy="110" r="3.5" fill="#a855f7"/>
+                                    <circle cx="370" cy="80" r="3.5" fill="#a855f7"/>
+                                    <circle cx="480" cy="70" r="3.5" fill="#a855f7"/>
+
+                                    <!-- Rail Line (Amber: 50M -> 38M) -->
+                                    <polyline fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4 2" stroke-linecap="round" points="40,110 150,119 260,125 370,131 480,137" />
+                                    <circle cx="40" cy="110" r="3.5" fill="#f59e0b"/>
+                                    <circle cx="150" cy="119" r="3.5" fill="#f59e0b"/>
+                                    <circle cx="260" cy="125" r="3.5" fill="#f59e0b"/>
+                                    <circle cx="370" cy="131" r="3.5" fill="#f59e0b"/>
+                                    <circle cx="480" cy="137" r="3.5" fill="#f59e0b"/>
+                                </svg>
+                            </div>
                         </div>
 
                         <div id="task1-model" class="hidden p-4 bg-slate-900 border border-brand-gold/40 rounded-lg text-xs leading-relaxed text-slate-300">
